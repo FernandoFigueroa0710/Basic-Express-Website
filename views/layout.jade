@@ -1,6 +1,32 @@
 doctype html
 html
   head
-    title my jade template
+    title Jumbotron Template &middot; Bootstrap
+    // Bootstrap core CSS
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+
   body
-    h1 Hello
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+      a.navbar-brand(href='#') PC Repairs
+
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/')
+              | Home
+              span.sr-only (current)
+
+          li.nav-item
+            a.nav-link(href='/about') About
+
+          li.nav-item
+            a.nav-link(href='/contact') Contact
+
+    main(role='main')
+    block content  
+        hr
+    footer.container
+      p(class='text-center') &copy; Company 2017-2018
